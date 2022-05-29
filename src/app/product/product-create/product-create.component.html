@@ -1,0 +1,56 @@
+<h1>Tao san pham</h1>
+<a routerLink="/">Danh sach san pham</a>
+<br>
+<!--<form #productCreate='ngForm' (ngSubmit)="createProduct(productCreate)">-->
+<!--  <div>-->
+<!--    <label for="id">Ma san pham</label>-->
+<!--    <input type="text" id="id" name="id" [ngModel]="product.id"-->
+<!--    required-->
+<!--           #productId='ngModel'-->
+<!--           [(ngModel)]="product.id"-->
+<!--    >-->
+<!--  </div>-->
+<!--  <div *ngIf="productId.touched && productId.invalid">-->
+<!--    <p style="color: red" *ngIf="productId.errors?.required">Truong nay bat buoc phai nhap</p>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="name">Ten san pham</label>-->
+<!--    <input type="text" id="name" name="name" [ngModel]="product.name">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="price">Gia san pham</label>-->
+<!--    <input type="text" id="price" name="price" [ngModel]="product.price">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="description">Mo ta</label>-->
+<!--    <input type="text" id="description" name="description" [ngModel]="product.description">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <button>Tao moi </button>-->
+<!--  </div>-->
+<!--</form>-->
+
+<!--Reactive Form-->
+<form [formGroup]="productForm" (ngSubmit)="createProductUsingReactiveForm()">
+  <div>
+    <label for="name">Ten san pham</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div *ngIf="nameControl.touched && nameControl.invalid">
+      <p style="color: red" *ngIf="nameControl.errors?.required">Truong nay bat buoc phai nhap</p>
+    </div>
+  <div>
+    <label for="price">Gia san pham</label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="quantity">So luong</label>
+    <input type="text" id="quantity" formControlName="quantity">
+  </div>
+  <div>
+    <button>Tao moi </button>
+  </div>
+</form>
+
+
+
